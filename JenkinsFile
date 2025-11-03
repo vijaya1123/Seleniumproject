@@ -26,14 +26,7 @@ pipeline {
 
                 echo 'Deploying the Application'
             }
-        }
-
- post {
-        always {
-            
-emailext body: 'Email Test', subject: 'Test Script Fail send Email', to: 'vijaympct03@gmail.com'
-        }
-    }
+}
 
 
     }
