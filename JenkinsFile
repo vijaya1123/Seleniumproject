@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build') {
+
+            steps {
+
+                echo 'Build the Application'
+            }
+        }
+
+  stage('Test') {
+
+            steps {
+
+                echo 'Test The Application'
+            }
+        }
+
+
+  stage('Deploy') {
+
+            steps {
+
+                echo 'Deploying the Application'
+            }
+        }
+
+ post {
+        always {
+            
+emailext body: 'Email Test', subject: 'Test Script Fail send Email', to: 'vijaympct03@gmail.com'
+        }
+    }
+
+
+    }
+}
